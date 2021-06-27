@@ -57,8 +57,8 @@ export function Canvas() {
   return (
     <main className="canvas" onDrop={handleDrop} onDragOver={handleDragOver}>
       <div className="buttons">
-        <button onClick={saveDiagram}>Save</button>
-        <button onClick={reset}>Reset</button>
+        <button className="btn btn-primary" onClick={saveDiagram}>Save</button>
+        <button className="btn btn-danger" onClick={reset}>Reset</button>
       </div>
       <Stage
         ref={stageRef}

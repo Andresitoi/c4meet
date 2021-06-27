@@ -1,5 +1,5 @@
 import React from "react";
-
+import * as Icon from 'react-bootstrap-icons';
 import { DRAG_DATA_KEY, SHAPE_TYPES } from "./constants";
 
 const handleDragStart = (event) => {
@@ -26,28 +26,46 @@ const handleDragStart = (event) => {
   }
 };
 
-export function Palette() {
+const refrescarSocket = ()=>{
+
+}
+
+export function Palette({online, socket}) {
   return (
     <aside className="palette">
+      {console.log(socket)}
+      <p>
+        Service status:
+      {online 
+        ?<span className="text-success"> Online</span>
+        :<span className="text-danger"> offline</span>        
+      }
+      </p>
       <h2>Elementos</h2>
       <div
-        className="shape rectangle"
         data-shape={SHAPE_TYPES.RECT}
         draggable
         onDragStart={handleDragStart}
-      />
+        onDragEnd={()=>console.log("soltamos")}
+      >
+      <Icon.Square size={96}/>
+      </div>
+      <br/>
       <div
-        className="shape circle"
         data-shape={SHAPE_TYPES.CIRCLE}
         draggable
         onDragStart={handleDragStart}
-      />
+        >
+        <Icon.Circle size={96}/>
+      </div>
+      <br/>
       <div
-        className="shape arrow"
         data-shape={SHAPE_TYPES.ARROW}
         draggable
         onDragStart={handleDragStart}
-      />
+      >
+      <Icon.ArrowRight size={96}/>
+      </div>
     </aside>
   );
 }

@@ -1,11 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    border: none;
-    box-sizing: border-box;
-    font-family: Roboto, Lato, Helvetica, Arial, sans-serif;
-    color: #030303;
-}
+
 
 html,
 body,
@@ -19,6 +12,7 @@ body,
     display: flex;
     overflow: hidden;
 }
+
 
 aside {
     width: 250px;
@@ -132,13 +126,8 @@ aside {
     height: 30px;
     text-transform: uppercase;
     cursor: pointer;
-    background: lightgray;
     transition: all 0.25s ease-in;
     z-index: 10;
     padding: 0 8px;
     border-radius: 4px;
-}
-
-.buttons button:hover {
-    background: darkgray;
 }
